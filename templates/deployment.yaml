@@ -16,7 +16,7 @@ spec:
       - name: dockercred
       containers:
       - name: {{app_Name}}
-        image: {{image_name}}:{{version}}
+        image: 19912508/myweb:{{version}}
         ports:
           - name: http-port
             containerPort: 8080
