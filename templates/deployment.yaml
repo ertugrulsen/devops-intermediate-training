@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: training-app
+  name: {{app_Name}}
 spec:
   replicas: 1
   selector:
@@ -12,11 +12,11 @@ spec:
       labels:
         app: {{app_Name}}
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: {{app_Name}}
         image: {{image_name}}:{{version}}
         ports:
           - name: http-port
             containerPort: 8080
-        imagePullSecrets:
-        - name: regcred
