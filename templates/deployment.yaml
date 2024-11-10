@@ -13,7 +13,7 @@ spec:
         app: {{app_Name}}
     spec:
       imagePullSecrets:
-      - name: regcred
+      - name: dockercred
       containers:
       - name: {{app_Name}}
         image: {{image_name}}:{{version}}
